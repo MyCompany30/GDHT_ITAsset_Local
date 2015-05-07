@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -140,6 +141,8 @@ public class ScanComplateActivity extends Activity {
 				}
 				
 			}
+			StockItem si = dataArray.get(position);
+			Log.i("a", "si = " + si.toString());
 			tv1.setText(dataArray.get(position).getRfidLabelnum());
 			tv1_.setText(dataArray.get(position).getRfidLabelnum());
 			String assetType = dataArray.get(position).getAssetType();
@@ -307,6 +310,7 @@ public class ScanComplateActivity extends Activity {
 									panBtn.setImageResource(R.drawable.yipan_pp);
 									tv7.setText("已盘");
 									panBtn.setClickable(false);
+									dataArray.get(position).setCheckstate("1");
 								}
 								dialog.dismiss();
 							};
@@ -347,7 +351,7 @@ public class ScanComplateActivity extends Activity {
 		protected void onPreExecute() {
 			// TODO Auto-generated method stub
 			super.onPreExecute();
-			dialog = new WaitingDialog(activity);
+			dialog = new WaitingDialog(ScanComplateActivity.this);
 			dialog.show();
 		}
 

@@ -132,8 +132,8 @@ public class PlanListActivity extends Activity {
 				try {
 					String version = getVersionName();
 					result = result.replaceAll("\"","");
-					 Toast.makeText(PlanListActivity.this, "当前应用版本号 : " +
-					 version + " 获取到的版本号 : " + result, 0).show();
+//					 Toast.makeText(PlanListActivity.this, "当前应用版本号 : " +
+//					 version + " 获取到的版本号 : " + result, 0).show();
 
 					if (result.equals(version)) {
 						// Toast.makeText(TheIndexActivity.this, "已经是最新版本!", 0)
